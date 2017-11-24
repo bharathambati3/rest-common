@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'  //prepare the Maven artifacts
 apply plugin: 'com.jfrog.artifactory' //upload the archives to Artifactory
 
 def packageName = 'com.sravs.common'
-def libraryVersion = '1.0.0'
+def libraryVersion = '1.0.1'
 
 repositories {
     jcenter()
