@@ -4,26 +4,26 @@ import com.sravs.common.response.BaseResponse;
 
 import javax.ws.rs.core.Response;
 
-public class AuthApplicationException extends RuntimeException {
+public class ApplicationException extends RuntimeException {
 
     private Response.Status status = Response.Status.CONFLICT;
     private BaseResponse response = new BaseResponse().setStatus(BaseResponse.FAILURE);
 
-    public AuthApplicationException() {
+    public ApplicationException() {
         super();
     }
 
-    public AuthApplicationException(String message) {
+    public ApplicationException(String message) {
         super(message);
         response.setMessage(message);
     }
 
-    public AuthApplicationException(String message, Throwable cause) {
+    public ApplicationException(String message, Throwable cause) {
         super(message, cause);
         response.setMessage(message).setData("Cause: " + cause.getMessage());
     }
 
-    public AuthApplicationException setStatus(Response.Status status) {
+    public ApplicationException setStatus(Response.Status status) {
         this.status = status;
         return this;
     }
@@ -40,7 +40,7 @@ public class AuthApplicationException extends RuntimeException {
         this.response = response;
     }
 
-    public AuthApplicationException setData(Object data) {
+    public ApplicationException setData(Object data) {
         response.setData(data);
         return this;
     }

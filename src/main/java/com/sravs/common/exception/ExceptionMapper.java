@@ -5,9 +5,9 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class AuthExceptionMapper implements ExceptionMapper<AuthApplicationException> {
+public class ExceptionMapper implements javax.ws.rs.ext.ExceptionMapper<ApplicationException> {
     @Override
-    public Response toResponse(AuthApplicationException exception) {
+    public Response toResponse(ApplicationException exception) {
         Response response = Response.status(exception.getStatus()).entity(exception.getResponse()).build();
         return response;
     }
